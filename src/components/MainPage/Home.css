@@ -102,7 +102,7 @@
   display: flex;
   font-size: 1.4em;
   /* justify-content: space-between; */
-  color: #333;
+  color: #686565;
   font-weight:bold;
   padding :2px;
   border-radius:5px;
@@ -162,12 +162,14 @@
 /* Responsive */
 @media (max-width: 768px) {
   .sidebar {
-    display: none;
-  }
+    width: 100%;
+    height: auto;
+    min-height: auto;
+}
   .right img {
     width: 80%;
   }
-  .home {
+  .homeSlide {
     display: none;
   }
 }

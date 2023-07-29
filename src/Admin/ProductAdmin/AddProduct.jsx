@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import CategoryForm from "./CategoryForm";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 const AddProductjsx = () => {
   const [imageUrl, setImageUrl] = useState("");
@@ -103,6 +104,8 @@ const AddProductjsx = () => {
       newErrors.imageUrl = "Vui lòng nhập chọn ảnh";
     }
 
+    var image = document.getElementById("file-input");
+
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
@@ -111,7 +114,7 @@ const AddProductjsx = () => {
       formData.append("productCode", productCode);
       formData.append("originPrice", price);
       formData.append("description", description);
-      formData.append("image", imageUrl);
+      formData.append("image", image.files[0]);
       formData.append("categoryId", selectedLanguages);
       var tokenn = localStorage.getItem("token");
       axios
@@ -159,7 +162,6 @@ const AddProductjsx = () => {
             onChange={handlePriceChange}
           />
           {errors.price && <p>{errors.price}</p>}
-
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>Description</Form.Label>
             <Form.Control
@@ -176,8 +178,9 @@ const AddProductjsx = () => {
             ))}
           </select>
           {errors.selectedLanguages && <p>{errors.selectedLanguages}</p>}
-
-          <button onClick={click}>Update</button>
+          <Button onClick={click} className="button_add" variant="danger">
+            Add
+          </Button>{" "}
         </div>
         <div class="image-upload">
           <label for="file-input">

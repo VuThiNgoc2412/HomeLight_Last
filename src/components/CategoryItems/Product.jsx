@@ -21,7 +21,7 @@ const Product = ({ addToCart, shopItems }) => {
   },[location]);
   return (
     <section className="shop background product_items product_mobile">
-      <div className="container d_flex product product_container">
+      <div className="container d_flex product_container">
         <div className="content-items">
           {products.map((product) => (
             <div className="product-content">

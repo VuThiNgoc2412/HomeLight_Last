@@ -60,7 +60,7 @@ const FlashCard = ({ productItems, addToCart }) => {
           return (
             <div className="box">
               <Link to={`/productdetail/${productItems.id}`}>
-              <div className="product mtop">
+              <div className="product mtop flash_product">
                 <div className="img">
                   <span className="discount">{productItems.sale.numberSale}%</span>
                   <img

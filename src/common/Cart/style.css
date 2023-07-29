@@ -104,6 +104,9 @@
 .total_price h3 {
   margin-top: 0;
 }
+.cart_input p {
+  color: red;
+}
 
 /* Responsive */
 @media (max-width: 768px) {

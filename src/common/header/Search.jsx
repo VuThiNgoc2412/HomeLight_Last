@@ -18,7 +18,7 @@ const Search = ({ CartItem }) => {
               <img src={logo} alt="" />
             </Link>
           </div>
-          <div class="">
+          <div class="search_input">
             <form class="d-flex">
               <input
                 class="form-control me-1"
@@ -34,7 +34,7 @@ const Search = ({ CartItem }) => {
               </Link>
             </form>
           </div>
-          <div className="icon f_flex width">
+          <div className="icon f_flex width icon_mobile">
             <div className="contact_phone">
               {/* <img src="https://www.emojiall.com/images/240/microsoft-teams/1f4de.png" alt="" className="contact_img" />
                */}

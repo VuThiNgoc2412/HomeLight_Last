@@ -356,7 +356,7 @@ const Shop = ({ addToCart, shopItems }) => {
                   </div>
 
                   <div className="category_child">
-                    {category.children.slice(0, 4).map((categorychild) => {
+                    {category.children.slice(0, 5).map((categorychild) => {
                       return (
                         <span key={categorychild.id}>
                           {categorychild.categoryName}
@@ -365,9 +365,8 @@ const Shop = ({ addToCart, shopItems }) => {
                     })}
                   </div>
                   <div className="heading-right row ">
-                    <Link to="/catedetail">
+                    <Link to={`/catedetail/${category.id}`}>
                       <span className="heading-right_text">View all</span>
-                      <i className="fa-solid fa-caret-right"></i>
                     </Link>
                   </div>
                 </div>

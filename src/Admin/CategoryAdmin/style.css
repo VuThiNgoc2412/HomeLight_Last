@@ -10,17 +10,6 @@ td {
 .action_category {
     margin-right: 20px;
 }
-
-.category_detail {
-    display: flex;
-    width: 95%;
-    justify-content: space-between;
-    margin-left: 52px;
-}
-.product_items {
-    width: 77%;
-    padding: 19px 0;
-}
 .product_container {
     max-width: 100%;
  
@@ -46,16 +35,7 @@ td {
     cursor: pointer;
 }
 
-.category_detail {
-    display: flex;
-    width: 95%;
-    justify-content: space-between;
-    margin-left: 52px;
-}
-.product_items {
-    width: 77%;
-    padding: 19px 0;
-}
+
 .product_container {
     max-width: 100%;
  

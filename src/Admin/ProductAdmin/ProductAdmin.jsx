@@ -5,6 +5,7 @@ import NavbarAdmin from "../NavbarAdmin/NavbarAdmin";
 import "./style.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Button from 'react-bootstrap/Button';
 
 const ProductAdmin = () => {
   const [products, setProducts] = useState([]);
@@ -39,7 +40,9 @@ const ProductAdmin = () => {
   return (
     <div className="container_product">
       <NavbarAdmin />
-      <Link to="/addproduct">New</Link>
+      <Link to="/addproduct">
+      <Button className="button_add" variant="danger">New</Button>{' '}
+      </Link>
       <Table striped bordered hover>
         <thead>
           <tr className="table_head">

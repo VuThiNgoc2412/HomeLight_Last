@@ -47,7 +47,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
 
     if (arrived === "") {
       newErrors.arrived = "Vui lòng nhập nơi bạn muốn giao đến";
-    }else if (!/^[\p{L}\s]+$/u.test(arrived)) {
+    } else if (!/^[\p{L}\s]+$/u.test(arrived)) {
       newErrors.arrived = "Số điện thoại chỉ được chứa chữ số";
     }
 
@@ -98,9 +98,9 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
                     <img src={item.image} alt="" />
                   </div>
                   <div className="cart-details">
-                  <h3>{item.productName}</h3>
+                    <h3>{item.productName}</h3>
                     <h4>
-                      {item.originPrice}.000 đ* {item.quantity} 
+                      {item.originPrice}.000 đ* {item.quantity}
                       <span>{productQty}.000 đ</span>
                     </h4>
                   </div>
@@ -112,16 +112,16 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
                     </div>
                     <div className="cartControl d_flex">
                       <button
-                        className="incCart"
-                        onClick={() => addToCart(item)}
-                      >
-                        <i className="fa-solid fa-plus"></i>
-                      </button>
-                      <button
                         className="desCart"
                         onClick={() => decreaseQty(item)}
                       >
                         <i className="fa-solid fa-minus"></i>
+                      </button>
+                      <button
+                        className="incCart"
+                        onClick={() => addToCart(item)}
+                      >
+                        <i className="fa-solid fa-plus"></i>
                       </button>
                     </div>
                   </div>
@@ -133,13 +133,13 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
           </div>
 
           <div className="cart-total product">
-            <h2>Cart Summary</h2>
+            <h2>Hóa đơn</h2>
             <Form>
               <Form.Group
-                className="mb-3"
+                className="mb-3 cart_input"
                 controlId="exampleForm.ControlInput1"
               >
-                <Form.Label>Email address</Form.Label>
+                <Form.Label>Email</Form.Label>
                 <Form.Control
                   type="email"
                   placeholder="name@example.com"
@@ -148,7 +148,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
                 {errors.email && <p>{errors.email}</p>}
               </Form.Group>
               <Form.Group
-                className="mb-3"
+                className="mb-3 cart_input"
                 controlId="exampleForm.ControlInput1"
               >
                 <Form.Label>Số điện thoại</Form.Label>
@@ -160,33 +160,34 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
                 {errors.phone && <p>{errors.phone}</p>}
               </Form.Group>
               <Form.Group
-                className="mb-3"
+                className="mb-3 cart_input"
                 controlId="exampleForm.ControlInput1"
               >
-                <Form.Label>Arrived</Form.Label>
+                <Form.Label>Người nhận</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Bạn muốn giao đến đâu?"
+                  placeholder="Nhập tên của bạn..."
                   onChange={handleArrivedChange}
                 />
                 {errors.arrived && <p>{errors.arrived}</p>}
               </Form.Group>
             </Form>
             <div className=" d_flex total_price">
-              <h4>Total Price :</h4>
-              <h3>${totalPrice}.00</h3>
+              <h4>Tổng tiền :</h4>
+              <h3>{totalPrice}.000 đ</h3>
             </div>
             <Button
               className="button_max button_mobile"
-              variant="danger"onClick={handleBuy}
-              >
-                Buy Now
-              </Button>{" "}
-            </div>
+              variant="danger"
+              onClick={handleBuy}
+            >
+              Mua ngay
+            </Button>{" "}
           </div>
-        </section>
-      </>
-    );
-  };
-  
-  export default Cart;
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Cart;

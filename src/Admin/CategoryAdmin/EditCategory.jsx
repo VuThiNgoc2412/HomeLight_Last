@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import CategoryForm from "../ProductAdmin/CategoryForm";
 import { useHistory } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 const EditCategory = () => {
   const [cate, setCate] = useState([]);
@@ -20,25 +21,18 @@ const EditCategory = () => {
   }, []);
 
   const navigate = useHistory();
-
-  const [selectedLanguages, setSelectedLanguages] = useState([]);
-
-  const handleSelectChange = (event) => {
-    const selectedOptions = Array.from(
-      event.target.selectedOptions,
-      (option) => option.value
-    );
-    setSelectedLanguages(selectedOptions);
-    console.log(selectedOptions);
-  };
-
   const [errors, setErrors] = useState({});
 
   const [CategoryName, setCategoryName] = useState("");
+  const [parent, setParent] = useState("");
   // const [image, setImage] = useState(null);
 
   const handleCategoryName = (event) => {
     setCategoryName(event.target.value);
+  };
+
+  const handleParent = (event) => {
+    setParent(event.target.value);
   };
 
   const click = () => {
@@ -49,22 +43,27 @@ const EditCategory = () => {
       newErrors.CategoryName = "Tên thể loại sản phẩm không hợp lệ";
     }
 
-    if (selectedLanguages.length === 0) {
-      newErrors.selectedLanguages = "Vui lòng nhập chọn category thay thế";
+    if (parent === "") {
+      newErrors.parent = "Vui lòng nhập chọn category cha";
     }
 
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      const formData = new FormData();
-      formData.append("categoryName", CategoryName);
-      formData.append("parent", selectedLanguages);
+      console.log(CategoryName);
+      console.log(parent);
+      const data = {
+        categoryName: CategoryName,
+        parent: parent,
+      };
+
       var tokenn = localStorage.getItem("token");
       var id = window.location.pathname.substring(14);
       axios
-        .put("http://26.30.1.50:8080/api/v1.0/Category/"+id, formData, {
+        .put("http://26.30.1.50:8080/api/v1.0/Category/" + id, data, {
           headers: {
             Authorization: "Bearer " + tokenn,
+            "Content-Type": "application/json", // Đặt kiểu phương tiện là JSON
           },
         })
         .then((response) => {
@@ -89,15 +88,16 @@ const EditCategory = () => {
       {errors.CategoryName && <p>{errors.CategoryName}</p>}
       <div>
         <h5>Chọn Category cha</h5>
-        <select id="Category" onChange={handleSelectChange}>
+        <select id="Category" onChange={handleParent}>
           {cate.map((item, index) => (
             <CategoryForm key={index} item={item} />
           ))}
         </select>
-        {errors.selectedLanguages && <p>{errors.selectedLanguages}</p>}
+        {errors.parent && <p>{errors.parent}</p>}
       </div>
-      <button onClick={click}>Update</button>
+      <Button onClick={click} className="button_add" variant="danger">Update</Button>{' '}
     </div>
   );
 };
+
 export default EditCategory;

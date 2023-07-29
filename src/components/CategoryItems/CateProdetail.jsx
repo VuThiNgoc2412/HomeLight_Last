@@ -1,5 +1,5 @@
 import React from "react";
-import FlashDeals from "../flashDeals/FlashDeals";
+// import FlashDeals from "../flashDeals/FlashDeals";
 import Product from "./Product";
 import SideBar from "./SideBar";
 import "./style.css";

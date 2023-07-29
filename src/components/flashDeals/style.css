@@ -23,11 +23,47 @@
   color: rgb(158, 158, 156);
 }
 @media (max-width: 768px)  {
+  .control-btn {
+    display: block;
+  }
+  .slick-track {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+.slick-slide {
+  width: 188px !important;
+}
+.slick-track:before, .slick-track:after {
+  display: none;
+}
+.product-name {
+  height: 28px;
+  margin-top: 8px;
+}
+.discount_img {
+  height: 100%;
+}
+.product_moblie {
+  padding: 10px;
+}
+.origin_title {
+  margin: 0;
+}
+.flash_product {
+  margin: 8px !important;
+}
+.f_flex h1 {
+  font-size: 30px;
+}
+.heading i {
+  font-size: 30px;
+}
   /* .slick-slide {
     height: 100%;
   }
   .slick-initialized .slick-slide {
-    width: 47% !important;
+    width: 20% !important;
     margin: 5px;
   }
   .img {

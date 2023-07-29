@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import CategoryAdminCard from "./CategoryAdminCard";
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 const CategoryAdmin = () => {
   const [Categorys, setCategorys] = useState([]);
@@ -18,7 +19,9 @@ const CategoryAdmin = () => {
   }, []);
   return (
     <div className="category category_admin">
-      <Link to="/addcategory">New</Link>
+      <Link to="/addcategory">
+      <Button className="button_add" variant="danger">New</Button>{' '}
+      </Link>
       {Categorys.map((item) => (
         <CategoryAdminCard item={item} />
       ))}

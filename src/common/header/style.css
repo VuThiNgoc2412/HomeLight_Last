@@ -73,11 +73,6 @@
   .heading-left {
     width: 23%;
   }
-  .heading-right {
-    width: 145%;
-    line-height: 47px;
-    cursor: pointer;
-  }
   /* .category_child span{
   } */
   .category_child span:hover {
@@ -88,91 +83,46 @@
     color: #f8a540;
     cursor: pointer;
   }
+  .search_input {
+    width: 50%;
+}
+.icon_mobile {
+    width: 30%;
+}
+.btn {
+    color: var(--bs-btn-hover-color);
+    background-color: var(--bs-btn-hover-bg);
+    border-color: var(--bs-btn-hover-border-color);
+}
+.btn:hover {
+    opacity: 0.8;
+}
   /* #idcategory{
     display: none;
   } */
   
   @media only screen and (max-width: 46.25em) {
-    .container.d_flex {
-      flex-wrap: wrap;
+    .logo {
+        display: none;
     }
-    .container.d_flex .category {
-      width: 100%;
+    .contact_title {
+        display: none;
     }
-    .homeSlide.contentWidth {
-      width: 100%;
+    .icon-circle {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        margin-left: 10px;
     }
-    .slick-slider.slick-initialized > button {
-      display: none !important;
+    .search .cart span {
+        width: 15px;
+        height: 15px;
+        font-size: 10px;
     }
-  
-    .box.d_flex.top {
-      margin: 0;
+    .search_input {
+        width: 65%;
     }
-    .box.d_flex.top .left {
-      display: none;
-    }
-    .product-content.grid1 {
-      /* background-color: red; */
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .category_child {
-      display: none;
-    }
-    .content__items {
-      width: 100%;
-    }
-    .container_item {
-      width: 100%;
-    }
-    .product {
-      background: #fff;
-  
-      margin: 0;
-      padding: 0;
-    }
-  
-    .d_flex {
-      display: flex;
-    }
-    .heading-right.row i {
-      display: none;
-    }
-    .product.mtop {
-      min-height: 100%;
-    }
-    .product.mtop .product-details {
-      padding: 10%;
-      padding-bottom: 0;
-    }
-    .box a {
-      height: 100%;
-      display: block;
-    }
-    .img {
-      height: 100px;
-    }
-    .img img {
-      border-radius: 8px 8px 0 0;
-      object-fit: cover;
-    }
-    .product-details h3 {
-      display: -webkit-box;
-      height: 42px;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      margin-bottom: 0;
-      -webkit-box-pack: center;
-  
-      align-items: center;
-    }
-    .price h4 {
-      font-size: 16px;
-      line-height: 35px;
-      margin-bottom: 0;
+    .contact_phone {
+        margin-right: 0;
     }
   }

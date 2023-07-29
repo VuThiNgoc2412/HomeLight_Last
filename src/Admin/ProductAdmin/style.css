@@ -79,4 +79,11 @@
     margin-top: 20px;
     margin-left: 10px;
 }
-  
+.edit_input p {
+    color: red;
+}
+.button_add {
+    width: 80px;
+    font-weight: 600;
+    margin: 20px 5px 0 15px;
+}
